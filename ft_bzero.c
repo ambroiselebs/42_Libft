@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-05 15:57:28 by aberenge          #+#    #+#             */
-/*   Updated: 2024-09-05 15:57:28 by aberenge         ###   ########.fr       */
+/*   Created: 2024-09-05 19:51:57 by aberenge          #+#    #+#             */
+/*   Updated: 2024-09-05 19:51:57 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*str;
+	int				i;
 
-	str = (unsigned char *)s;
-	while (n-- > 0)
+	str = (unsigned char *) s;
+	i = 0;
+	while (i < (int) n)
 	{
-		if (*str == (unsigned char) c)
-			return ((void *) str);
-		str++;
+		str[i] = 0;
+		i++;
 	}
-	return (NULL);
 }
 /*
 int	main(void)
 {
-	void 	*found = memchr("je suis ambroise", 'a', 10);
-	void	*found2 = ft_memchr("je suis ambroise", 'a', 10);
-	if ( found != NULL ) {
-		printf("%d ; %d", *((char *) found2), *((char *) found));
-	}
+	char	res[12];
+
+	ft_bzero(res, 11);
+	printf("%s\n", res);
+	bzero(res, 11);
+	printf("%s\n", res);
 }*/

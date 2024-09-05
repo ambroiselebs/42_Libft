@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-05 15:57:28 by aberenge          #+#    #+#             */
-/*   Updated: 2024-09-05 15:57:28 by aberenge         ###   ########.fr       */
+/*   Created: 2024-09-05 19:28:56 by aberenge          #+#    #+#             */
+/*   Updated: 2024-09-05 19:28:56 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*str;
+	int				i;
 
-	str = (unsigned char *)s;
-	while (n-- > 0)
+	str = (unsigned char *) b;
+	i = 0;
+	while (i < (int) len)
 	{
-		if (*str == (unsigned char) c)
-			return ((void *) str);
-		str++;
+		str[i] = c;
+		i++;
 	}
-	return (NULL);
+	return (b);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
-	void 	*found = memchr("je suis ambroise", 'a', 10);
-	void	*found2 = ft_memchr("je suis ambroise", 'a', 10);
-	if ( found != NULL ) {
-		printf("%d ; %d", *((char *) found2), *((char *) found));
-	}
-}*/
+	char b[12];
+	void *custom_res = ft_memset(b, 'a', 11);
+	void *official_res = memset(b, 'a', 11);
+
+	printf("%s ; %s", (char *) custom_res, (char *) official_res);
+} */
