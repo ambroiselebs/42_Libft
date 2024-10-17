@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-05 06:51:48 by aberenge          #+#    #+#             */
-/*   Updated: 2024-09-05 06:51:48 by aberenge         ###   ########.fr       */
+/*   Created: 2024/09/05 06:51:48 by aberenge          #+#    #+#             */
+/*   Updated: 2024/10/17 16:11:07 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
+		if (s[i] == (char) c)
+			break ;
+		i++;
 	}
+	if (s[i] == (char) c)
+		return ((char *) s + i);
 	return (NULL);
 }

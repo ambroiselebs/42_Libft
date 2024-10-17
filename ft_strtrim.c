@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-07 18:02:18 by aberenge          #+#    #+#             */
-/*   Updated: 2024-09-07 18:02:18 by aberenge         ###   ########.fr       */
+/*   Created: 2024/09/07 18:02:18 by aberenge          #+#    #+#             */
+/*   Updated: 2024/10/14 16:39:49 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_char(char c, char const *set)
+static int	check_char(char c, char const *set)
 {
 	int	i;
 

@@ -3,53 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-08 11:11:12 by aberenge          #+#    #+#             */
-/*   Updated: 2024-09-08 11:11:12 by aberenge         ###   ########.fr       */
+/*   Created: 2024/09/08 11:11:12 by aberenge          #+#    #+#             */
+/*   Updated: 2024/10/17 16:14:09 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_malloc_size(int n)
+static size_t	count_size(long nb)
 {
-	int	len;
+	size_t	size;
 
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n)
+	size = 0;
+	if (nb < 0)
 	{
-		len++;
-		n = n / 10;
+		nb = nb * (-1);
+		size = 1;
 	}
-	return (len);
+	if (nb == 0)
+		size = 1;
+	else
+	{
+		while (nb)
+		{
+			nb = nb / 10;
+			size++;
+		}
+	}
+	return (size);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*ptr;
-	int		len;
+	size_t	size;
+	long	nb;
+	char	*str;
+	int		is_negative;
 
-	len = get_malloc_size(n);
-	ptr = (char *) malloc((len + 1) * sizeof(char));
-	if (!ptr)
+	size = count_size((long) n);
+	str = (char *) malloc(sizeof(char) * (size + 1));
+	if (str == NULL)
 		return (NULL);
-	ptr[len] = '\0';
-	if (n < 0)
+	nb = (long) n;
+	is_negative = 0;
+	if (nb < 0)
 	{
-		ptr[0] = '-';
-		n = -n;
+		nb = nb * (-1);
+		str[0] = '-';
+		is_negative = 1;
 	}
-	if (n == 0)
-		ptr[0] = '0';
-	while (n > 0)
+	str[size] = '\0';
+	while (size > (size_t) is_negative)
 	{
-		ptr[--len] = (n % 10) + '0';
-		n = n / 10;
+		str[size - 1] = nb % 10 + '0';
+		nb = nb / 10;
+		size--;
 	}
-	return (ptr);
+	return (str);
 }
 /*
 int	main(void)

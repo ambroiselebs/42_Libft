@@ -28,8 +28,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 /*
 int	main(void)
 {
-	void 	*found = memchr("je suis ambroise", 'a', 10);
-	void	*found2 = ft_memchr("je suis ambroise", 'a', 10);
+	void 	*found = memchr("je suis ambroise", 'b', 12);
+	void	*found2 = ft_memchr("je suis ambroise", 'b', 12);
 	if ( found != NULL ) {
 		printf("%d ; %d", *((char *) found2), *((char *) found));
 	}

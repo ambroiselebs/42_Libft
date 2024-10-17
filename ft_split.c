@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-07 18:15:49 by aberenge          #+#    #+#             */
-/*   Updated: 2024-09-07 18:15:49 by aberenge         ###   ########.fr       */
+/*   Created: 2024/09/07 18:15:49 by aberenge          #+#    #+#             */
+/*   Updated: 2024/10/14 16:39:28 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char const *str, char sep)
+static int	count_words(char const *str, char sep)
 {
 	int	count;
 
@@ -29,7 +29,7 @@ int	count_words(char const *str, char sep)
 	return (count);
 }
 
-char	*malloc_word(char const *str, char sep)
+static char	*malloc_word(char const *str, char sep)
 {
 	int		len;
 	char	*word;
