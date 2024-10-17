@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:02:18 by aberenge          #+#    #+#             */
-/*   Updated: 2024/10/14 16:39:49 by aberenge         ###   ########.fr       */
+/*   Updated: 2024/10/17 16:33:41 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int	main(void)
 {
-	char	*s1 = "Bonjour je suis Ambroise";
-	char	*set = "uoi";
+	char	*s1 = "tripouille   xxx";
+	char	*set = " x";
 	char	*res = ft_strtrim(s1, set);
 	printf("%s\n", res);
+	printf("%zu | %zu", ft_strlen(res), ft_strlen("tripouille"));
 	free(res);
 }*/
