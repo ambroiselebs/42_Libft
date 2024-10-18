@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 08:12:08 by aberenge          #+#    #+#             */
-/*   Updated: 2024/10/17 16:06:23 by aberenge         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:00:02 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
-	i = 0;
-	if (!dst || !src)
+	if (!src || !src)
 		return (0);
+	if (!dst && dstsize > 0)
+		return (0);
+	i = 0;
 	while (src[i] && i + 1 < dstsize)
 	{
 		dst[i] = src[i];
