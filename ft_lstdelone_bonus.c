@@ -6,11 +6,11 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 13:51:31 by aberenge          #+#    #+#             */
-/*   Updated: 2024/10/21 13:51:41 by aberenge         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:51:02 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

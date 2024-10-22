@@ -6,11 +6,11 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 13:52:39 by aberenge          #+#    #+#             */
-/*   Updated: 2024/10/21 13:56:44 by aberenge         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:51:02 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
